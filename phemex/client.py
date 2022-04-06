@@ -144,3 +144,9 @@ class Client(object):
         https://github.com/phemex/phemex-api-docs/blob/master/Public-API-en.md#633-query-24-hours-ticker
         """
         return self._send_request("GET", "/md/ticker/24hr", params={"symbol": symbol})
+    
+    def query_all_orders(self, symbol):
+        """
+        https://github.com/phemex/phemex-api-docs/blob/master/Public-Spot-API-en.md#query-orders-history
+        """
+        return self._send_request("GET", "/api-data/spots/orders", params={"symbol": symbol})
